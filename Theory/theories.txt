@@ -1,0 +1,65 @@
+
+
+** What different data type in js?
+
+have 2 different: 
+1. Primitive type 
+Primitive type online store only 1 value.
+string
+number
+boolean 
+
+2. Non-primitive type
+object, json - often store data. 
+can store many value;
+
+** Explain hoisting in js?
+
+hoisting in js mean every variable and function are defined is going on the top. 
+that mean u can use fn first then declare fn latter.
+--> Declaration on top 
+
+** Why do we use the word "debugger" in js?
+
+Debugger help us stop when in error, and not move in next section of code. 
+That help us find bug faster and can focus on it, if code run all section hard to see the prob
+
+** Different between "==" and "===" 
+ double = we can compare 2 different type but and same value, like 
+ string "1" == 1 is true;
+ but triple = cannot. 
+ string "1" === 1 is false; because triple = need them at the same type
+
+** Different between var and let keyword in js 
+
+var is declaration of variable and let is same.
+
+let only available in block he is defined.
+var available throughout the fn in which they're declared.
+
+example:
+
+fn sum() {
+  var d = 0;
+  fn sum2(a, b) {
+    var a = 2 , b = 2;
+    var d = a + b;
+    console.log(d) // 4
+  }
+  console.log(d) // 4;
+}
+
+fn sum() {
+  let d = 0;
+  fn sum(a , b) {
+    let a = 2 , b = 2 ;
+    let d = a + b;
+    console.log(d) // 4;
+  }
+  console.log(d) // 0;
+}
+
+** Explain implicit Type Coercion in Js // ep buoc^. kieu^? ngam^` dinh.
+
+
+

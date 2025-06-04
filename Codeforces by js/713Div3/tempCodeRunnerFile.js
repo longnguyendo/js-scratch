@@ -1,0 +1,1 @@
+return str.length + Object.keys(map).length
