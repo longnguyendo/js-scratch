@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Unload Event Example</title>
+</head>
+<body>
+    <h1>Example unload Event Demo</h1>
+    <input type="text" id="myInput" placeholder="Type something...">
+    <p>Try closing the tab or refreshing the page to see the unload event in action.</p>
+    <script>
+        // Optional: Track if the form has unsaved changes
+        let hasUnsavedChanges = false;
+
+        document.getElementById('myInput').addEventListener('input', function(e) {
+            hasUnsavedChanges = true;
+            console.log(e.target.value);
+             console.log("change", hasUnsavedChanges);
+        });
+        // Add unload event listener
+        
+        window.addEventListener('beforeunload', function(event) {
+            
+            // Modern browsers require this to show a confirmation dialog
+            if (hasUnsavedChanges) {
+                event.preventDefault();
+                event.returnValue = 'Are you sure you want to leave? Your changes may not be saved.';
+                
+                // Optional: Perform cleanup tasks (but they must be synchronous)
+                console.log('User is leaving the page...');
+            }
+        });
+    </script>
+</body>
+</html>

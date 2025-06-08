@@ -153,27 +153,6 @@ console.log("course", render(courses));
 //     console.log("you copied", selectText);
     
 // })
-// block copy paste
-
-document.addEventListener('copy', (e) => {
-    // alert('copy is not allowed here');
-    e.preventDefault();
-    console.log("user copied smt!");
-
-    const selectText = window.getSelection().toString();
-    console.log('text copied', selectText);
-    
-})
-
-document.addEventListener('paste', (e) => {
-    // alert('copy is not allowed here');
-    e.preventDefault();
-    console.log("user copied smt!");
-
-    const selectText = window.getSelection().toString();
-    console.log('text copied', selectText);
-    
-})
 
 // 158 PreventDefault / stopPropagation
 // preventDefault hanh vi mat dinh cua site;
@@ -229,3 +208,30 @@ stopBoxEle.onclick=(e)=> {
 // 1. handle many task after 1 event happen
 // 2. Listen/ cancel listening
 // example, u can ask user that do u want to reload page
+
+// block copy paste
+
+document.addEventListener('copy', (e) => {
+    // alert('copy is not allowed here');
+    e.preventDefault();
+    console.log("user copied smt!");
+
+    const selectText = window.getSelection().toString();
+    console.log('text copied', selectText);
+    
+})
+
+document.addEventListener('paste', (e) => {
+    // alert('copy is not allowed here');
+    e.preventDefault();
+    console.log("user copied smt!");
+
+    const selectText = window.getSelection().toString();
+    console.log('text copied', selectText);
+    
+})
+
+document.addEventListener('unload', (e) => {
+    e.preventDefault();
+    alert('Do u want to reload page');
+})
