@@ -4,11 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-    
+  <link rel="stylesheet" href="./style.css">
+  <style> 
+    ul {
+      display: none;
+    }
+    input:focus ~ ul {
+      display: block;
+    }
+  </style>
 </head>
 <body>
-  <h1 id="tagh1">HTML</h1>
-
+  <!-- <h1 id="tagh1">HTML</h1>
+  <button>Submit</button>
   <div class="products-list">
       <div class="product">
           <h3 class="title">Khóa học HTML & CSS Pro</h3>
@@ -19,11 +27,38 @@
           <h3 class="title">Khóa học Javascript Pro</h3>
           <p class="description">Cung cấp kiến thức từ cơ bản đến nâng cao về Javascript</p>
           <button class="cta-btn">Mua ngay</button>    
-      </div>
-      <p>Truy cập <a>fullstack.edu.vn</a> để học lập trình miễn phí các bạn nhé!!!</p>
-      <div class="box">
+      </div> -->
+      <!-- <p>Truy cập <a>fullstack.edu.vn</a> để học lập trình miễn phí các bạn nhé!!!</p> -->
+      <!-- <div class="box">
         <ul class="list">1</ul>
       </div>
+
+      <form class="login">
+        <label for="login">login</label>
+        <input type="text" name="login">
+        <label for="password">password</label>
+        <input type="password" name="password" value="password">
+        <label for="checkbox">checkbox</label>
+        <input type="checkbox" name="checkbox" value="checkbox">
+        <select name="" id="">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+      </form> -->
+
+      <a href="https://google.com" target="_blank">Tim kiem</a>
+      <a href="https://translate.google.com">Translate</a>
+      <div class="divStopPropagation">
+        DIV
+        <box class="stopPropagation">BOX</box>
+      </div>
+      <input placeholder="tim kiem">
+      <ul>
+        <li>Js</li>
+        <li>PHP</li>
+        <li>C++</li>
+      </ul>
   </div>
 </body>
 
