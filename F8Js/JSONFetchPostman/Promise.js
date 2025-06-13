@@ -125,6 +125,7 @@ let promise = new Promise(
 // 1. Promise.resolve
 // 2. Promise.reject
 // 3. Promise.all
+
 // add 10 promise;
 // let promise1 = new Promise(
 //     function(resolve) {
@@ -160,7 +161,7 @@ let promise = new Promise(
 //         res.forEach((items) => {
 //             items.map((item) => {
 //                 console.log(item);
-                
+//                 sum+=item;
 //             })
 //         })
 //         console.log("sum",sum);
@@ -262,3 +263,10 @@ function getUsersByIds(userIds) {
     })
 }
 
+// Conclusion:
+// - sync 
+// - async
+// - Pain of cb hell
+// - Theory and how to practice with Theory;
+// - Practice, example 
+// - Promise in real project 
