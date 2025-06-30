@@ -9,15 +9,24 @@ const start = () => {
     // });
     // instead of that we can use 
     getPosts(renderPosts);
-    handleCreatePost();
-
+    // handleCreatePost();
 }
 
 start();
 
+let submitEle = document.querySelector('#submit');
+
+submitEle.addEventListener('submit', function(e) {
+
+    console.log("event", e.target.title.value);
+    e.preventDefault();
+})
+// action / method, url -> 
+let post;
 function getPosts(callback) {
     fetch(`${linkAPI}/posts`)
         .then((res) => {
+            post=res.json();
             let result = res.json();
             return result;
         })
@@ -28,7 +37,7 @@ function getPosts(callback) {
         .catch((err) => {
             console.log(err);
         })
-} 
+}
 
 function renderPosts(posts){
 
@@ -46,47 +55,47 @@ function renderPosts(posts){
     // addDeleteEventListeners();
 }
 
-function handleCreatePost() {
-    let createBtn = document.querySelector('#create-post');
+// function handleCreatePost() {
+//     let createBtn = document.querySelector('#create-post');
 
-    createBtn.onclick = function() {
+//     createBtn.onclick = function() {
 
-        let title = document.querySelector('input[name="title"]');
-        let views = document.querySelector('input[name="views"]');
+//         let title = document.querySelector('input[name="title"]');
+//         let views = document.querySelector('input[name="views"]');
         
-        let formData = {
-            title: title.value, 
-            views: views.value   
-        }
-        console.log(formData);
-        createPost(formData, function() {
-            title.value='';
-            views.value='';
-        });
-
-    }
-}
+//         let formData = {
+//             title: title.value, 
+//             views: views.value   
+//         }
+//         // console.log(formData);
+//         createPost(formData, function() {
+//             title.value='';
+//             views.value='';
+//         });
+//     }
+// }
 
 function createPost(data, callback) {
     let options = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        reload: 'manual',
         body: JSON.stringify(data)
     };
 
-    fetch(`${linkAPI}/posts`, options)
-        .then(function(res) {
-            return res.json();
-        })
-        .then((newPost) => {
-            postsData.unshift(newPost);
-            renderPosts(postsData);
-            callback();
-        })
-        .catch((err) => {
-            console.log(err);
-        })
+    // fetch(`${linkAPI}/posts`, options)
+    //     .then(function(res) {
+    //         return res.json();
+    //     })
+    //     .then((newPost) => {
+    //         postsData.unshift(newPost);
+    //         renderPosts(postsData);
+    //         callback();
+    //     })
+    //     .catch((err) => {
+    //         console.log(err);
+    //     })
+    postsData.
+    renderPosts(postsData);
 }
 
 function handleDeletePost(id) {
@@ -104,8 +113,7 @@ function handleDeletePost(id) {
         .then(function() {
             getPosts(renderPosts);
         })
-        .catch((err) => { 
+        .catch((err) => {
             console.log(err);
-            
         })
 }
